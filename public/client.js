@@ -16,6 +16,14 @@ var operand1 = 0;
 var operand2 = 0;
 var operation = null;
 
+/**
+ * Performs an arithmetic operation between two operands by sending a request to the server.
+ *
+ * @param {number|string} operand1 - The first operand for the calculation.
+ * @param {number|string} operand2 - The second operand for the calculation.
+ * @param {'+'|'-'|'*'|'/'|'^'} operation - The arithmetic operation to perform. Supported operations: '+', '-', '*', '/', '^'.
+ * @returns {void}
+ */
 function calculate(operand1, operand2, operation) {
     var uri = location.origin + "/arithmetic";
 
@@ -33,6 +41,7 @@ function calculate(operand1, operand2, operation) {
         case '/':
             uri += "?operation=divide";
             break;
+
         case '^':
             uri += "?operation=power";
             break;
