@@ -5,7 +5,6 @@ exports.calculate = function(req, res) {
     if (res.headersSent) {
       return next(err);
     }
-
     res.status(400);
     res.json({ error: err.message });
   });
@@ -16,7 +15,7 @@ exports.calculate = function(req, res) {
     'subtract': function(a, b) { return a - b },
     'multiply': function(a, b) { return a * b },
     'divide':   function(a, b) { return a / b },
-    'power':   function(a, b) { return Math.pow(a, b) },
+    'power':   function(a, b) { return Math.pow(a, b) },    
   };
 
   if (!req.query.operation) {
