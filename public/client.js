@@ -33,6 +33,9 @@ function calculate(operand1, operand2, operation) {
         case '/':
             uri += "?operation=divide";
             break;
+        case '^':
+            uri += "?operation=power";
+            break;
         default:
             setError();
             return;
@@ -142,6 +145,9 @@ document.addEventListener('keypress', (event) => {
         operationPressed(event.key);
     } else if (event.key == '=') {
         equalPressed();
+    }
+    else if (event.key == '^') {
+        operationPressed(event.key);
     }
 });
 
