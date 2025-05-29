@@ -16,6 +16,15 @@ var operand1 = 0;
 var operand2 = 0;
 var operation = null;
 
+/**
+ * Performs an arithmetic operation between two operands by sending a request to the server.
+ *
+ * @param {number|string} operand1 - The first operand for the calculation.
+ * @param {number|string} operand2 - The second operand for the calculation.
+ * @param {'+'|'-'|'*'|'/'|'^'} operation - The arithmetic operation to perform: addition ('+'), subtraction ('-'), multiplication ('*'), division ('/'), or exponentiation ('^').
+ *
+ * @returns {void}
+ */
 function calculate(operand1, operand2, operation) {
     var uri = location.origin + "/arithmetic";
 
@@ -32,6 +41,9 @@ function calculate(operand1, operand2, operation) {
             break;
         case '/':
             uri += "?operation=divide";
+            break;
+        case '^':
+            uri += "?operation=power";
             break;
         default:
             setError();
@@ -134,6 +146,7 @@ function equalPressed() {
 
 // TODO: Add key press logics
 document.addEventListener('keypress', (event) => {
+    console.log("event.key", event.key);
     if (event.key.match(/^\d+$/)) {
         numberPressed(event.key);
     } else if (event.key == '.') {
@@ -143,6 +156,11 @@ document.addEventListener('keypress', (event) => {
     } else if (event.key == '=') {
         equalPressed();
     }
+    // additional key handling for power button with sign '^'
+    else if (event.key == '^') {
+        operationPressed('^');
+    } 
+    
 });
 
 function getValue() {

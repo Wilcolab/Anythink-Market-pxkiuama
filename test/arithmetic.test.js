@@ -204,5 +204,14 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
+        // write a test for power button with symbol '^'
+        it('divides with negative exponent', function (done) {
+            request.get('/arithmetic?operation=divide&operand1=1.2e-5&operand2=-1.2e-5')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: -1 });
+                    done();
+                });
+        });
     });
 });
