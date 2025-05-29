@@ -11,6 +11,16 @@ exports.calculate = function(req, res) {
   });
 
   // TODO: Add operator
+  /**
+   * An object containing basic arithmetic operations.
+   *
+   * @type {Object.<string, function(number, number): number>}
+   * @property {function(number, number): number} add - Returns the sum of two numbers.
+   * @property {function(number, number): number} subtract - Returns the difference of two numbers.
+   * @property {function(number, number): number} multiply - Returns the product of two numbers.
+   * @property {function(number, number): number} divide - Returns the quotient of two numbers.
+   * @property {function(number, number): number} power - Returns the result of raising the first number to the power of the second.
+   */
   var operations = {
     'add':      function(a, b) { return Number(a) + Number(b) },
     'subtract': function(a, b) { return a - b },
