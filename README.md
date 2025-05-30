@@ -37,3 +37,36 @@ The FastAPI server provides the following API routes:
 - `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
 
 - `GET /tasks`: Retrieves the task list.
+## Node.js Server
+
+A new server implementation using Node.js and Express is available in the `express-server-app` directory. The endpoints from `main.py` have been migrated to `index.js`.
+
+### Project Structure
+
+- `express-server-app/index.js`: Contains the Express server implementation with the same `/tasks` endpoints as the Python server.
+- `express-server-app/package.json`: Lists the dependencies required for the Node.js server.
+
+### Running the Node.js Server
+
+To run the Express server:
+
+1. Navigate to the `express-server-app` directory:
+  ```shell
+  cd express-server-app
+  ```
+2. Install dependencies:
+  ```shell
+  npm install
+  ```
+3. Start the server:
+  ```shell
+  npm start
+  ```
+The server will be available at port `8000` by default.
+
+### API Routes
+
+The Express server provides the same API routes:
+
+- `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
+- `GET /tasks`: Retrieves the task list.
