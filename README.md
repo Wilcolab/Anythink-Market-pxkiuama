@@ -62,7 +62,7 @@ To run the Express server:
   ```shell
   npm start
   ```
-The server will be available at port `8000` by default.
+The server will be available at port `8001` by default.
 
 ### API Routes
 
